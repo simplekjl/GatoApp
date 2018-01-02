@@ -1,10 +1,10 @@
 package share.dev.com.gatoapp
 
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -115,17 +115,90 @@ class MainActivity : AppCompatActivity() {
             winner = 2
         }
         if (winner != -1) {
-            Toast.makeText(this, "Player $winner wins!", Toast.LENGTH_LONG).show()
-            for(i in 1..9){
-                if (player1.contains(i) || player2.contains(i)){
+            showWinner(winner)
+            for (i in 1..9) {
+                if (player1.contains(i) || player2.contains(i)) {
                     //no action need
-                }else
-                {
-                   disableTile(i)
+                } else {
+                    disableTile(i)
                 }
             }
 
         }
+    }
+
+    fun showWinner(winner: Int) {
+
+        val winnerDialog = AlertDialog.Builder(this@MainActivity).create()
+        winnerDialog.setTitle(R.string.winner_title)
+        winnerDialog.setMessage(getString(R.string.winner_message_dialog) + winner)
+        winnerDialog.setButton(AlertDialog.BUTTON_POSITIVE, "New game", { dialogInterface, i ->
+            restartGame()
+            dialogInterface.dismiss()
+        })
+        winnerDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Close app", { dialogInterface, i ->
+            this.finish()
+            System.exit(0)
+        })
+        winnerDialog.show()
+    }
+
+    private fun restartGame() {
+        player1 = ArrayList<Int>()
+        player2 = ArrayList<Int>()
+        for (i in 1..9) {
+            when (i) {
+                1 -> {
+                    btn1.isEnabled = true
+                    btn1.setBackgroundResource(R.color.white)
+                    btn1.setText(null)
+                }
+                2 -> {
+                    btn2.isEnabled = true
+                    btn2.setBackgroundResource(R.color.white)
+                    btn2.setText("")
+                }
+                3 -> {
+                    btn3.isEnabled = true
+                    btn3.setBackgroundResource(R.color.white)
+                    btn3.setText("")
+                }
+                4 -> {
+                    btn4.isEnabled = true
+                    btn4.setBackgroundResource(R.color.white)
+                    btn4.setText("")
+                }
+                5 -> {
+                    btn5.isEnabled = true
+                    btn5.setBackgroundResource(R.color.white)
+                    btn5.setText("")
+                }
+                6 -> {
+                    btn6.isEnabled = true
+                    btn6.setBackgroundResource(R.color.white)
+                    btn6.setText("")
+                }
+                7 -> {
+                    btn7.isEnabled = true
+                    btn7.setBackgroundResource(R.color.white)
+                    btn7.setText("")
+                }
+                8 -> {
+                    btn8.isEnabled = true
+                    btn8.setBackgroundResource(R.color.white)
+                    btn8.setText("")
+                }
+                9 -> {
+                    btn9.isEnabled = true
+                    btn9.setBackgroundResource(R.color.white)
+                    btn9.setText("")
+                }
+                else -> {
+                    btn1.isEnabled = true
+                }
+            }
+        }
+
     }
 
     /**
@@ -139,11 +212,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         var rand = Random()
-        val randIndex = rand.nextInt(emptyCells.size-0)+0
+        val randIndex = rand.nextInt(emptyCells.size - 0) + 0
         val cellID = emptyCells[randIndex]
 
-        var button : Button?
-        when(cellID){
+        var button: Button?
+        when (cellID) {
             1 -> button = btn1
             2 -> button = btn2
             3 -> button = btn3
@@ -153,13 +226,14 @@ class MainActivity : AppCompatActivity() {
             7 -> button = btn7
             8 -> button = btn8
             9 -> button = btn9
-            else ->{
+            else -> {
                 button = btn1
             }
         }
-        playGame(cellID,button)
+        playGame(cellID, button)
     }
-    fun disableTile(index : Int){
+
+    fun disableTile(index: Int) {
 
         when (index) {
             1 -> btn1.isEnabled = false

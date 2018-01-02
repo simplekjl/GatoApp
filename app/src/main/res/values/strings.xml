@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GatoApp</string>
+    <string name="winner_title">End of the game</string>
+    <string name="winner_message_dialog">The winner is:</string>
 </resources>
