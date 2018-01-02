@@ -1,6 +1,5 @@
 package share.dev.com.gatoapp
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -43,13 +42,13 @@ class MainActivity : AppCompatActivity() {
     fun playGame(cellID: Int, tileSelected: Button) {
         if (activePlayer == 1) {
             tileSelected.text = "X"
-            tileSelected.setBackgroundColor(Color.GREEN)
+            tileSelected.setBackgroundResource(R.color.player1)
             player1.add(cellID)
             activePlayer = 2
             autoplay()
         } else {
             tileSelected.text = "O"
-            tileSelected.setBackgroundColor(Color.BLUE)
+            tileSelected.setBackgroundResource(R.color.player2)
             player2.add(cellID)
             activePlayer = 1
         }
