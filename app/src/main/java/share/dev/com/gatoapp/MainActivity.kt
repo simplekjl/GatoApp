@@ -116,6 +116,15 @@ class MainActivity : AppCompatActivity() {
         }
         if (winner != -1) {
             Toast.makeText(this, "Player $winner wins!", Toast.LENGTH_LONG).show()
+            for(i in 1..9){
+                if (player1.contains(i) || player2.contains(i)){
+                    //no action need
+                }else
+                {
+                   disableTile(i)
+                }
+            }
+
         }
     }
 
@@ -150,4 +159,19 @@ class MainActivity : AppCompatActivity() {
         }
         playGame(cellID,button)
     }
+    fun disableTile(index : Int){
+
+        when (index) {
+            1 -> btn1.isEnabled = false
+            2 -> btn2.isEnabled = false
+            3 -> btn3.isEnabled = false
+            4 -> btn4.isEnabled = false
+            5 -> btn5.isEnabled = false
+            6 -> btn6.isEnabled = false
+            7 -> btn7.isEnabled = false
+            8 -> btn8.isEnabled = false
+            9 -> btn9.isEnabled = false
+        }
+    }
+
 }
