@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/whitebackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -16,6 +17,7 @@
 
         <Button
             android:id="@+id/btn1"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -24,6 +26,7 @@
 
         <Button
             android:id="@+id/btn2"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -31,6 +34,7 @@
 
         <Button
             android:id="@+id/btn3"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -44,6 +48,7 @@
 
         <Button
             android:id="@+id/btn4"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -51,6 +56,7 @@
 
         <Button
             android:id="@+id/btn5"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -58,6 +64,7 @@
 
         <Button
             android:id="@+id/btn6"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -71,6 +78,7 @@
 
         <Button
             android:id="@+id/btn7"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -78,6 +86,7 @@
 
         <Button
             android:id="@+id/btn8"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
@@ -85,6 +94,7 @@
 
         <Button
             android:id="@+id/btn9"
+            android:background="@color/white"
             android:layout_width="@dimen/tile_widht_height"
             android:layout_height="@dimen/tile_widht_height"
             android:layout_margin="1pt"
